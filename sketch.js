@@ -79,8 +79,8 @@ function draw() {
   text('Pontuação: ' + score, width - 100, 50)
 
   if (gameState === PLAY) {
-    score = score + Math.round(getFrameRate() / 60)
-    ground.velocityX = -(6 + (3 * score) / 100)
+    score = score + Math.round(getFrameRate() / 120)
+    ground.velocityX = -(6 + (2 * score) / 100)
 
     if ((touches.length > 0 || keyDown('space')) && trex.y >= height - 90) {
       trex.velocityY = -12
@@ -142,7 +142,7 @@ function spawnClouds() {
 function spawnObstacles() {
   if (frameCount % 60 === 0) {
     var obstacle = createSprite(600, height - 65, 10, 40)
-    obstacle.velocityX = -(6 + (3 * score) / 100)
+    obstacle.velocityX = -(6 + (2 * score) / 100)
 
     var rand = Math.round(random(1, 6))
     switch (rand) {
